@@ -1,0 +1,75 @@
+/***********************************************
+* General
+***********************************************/
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.input-group-text {
+  background-color: rgba(152, 209, 88, 1);
+  border-radius: 20px 0 0 20px;
+  border: none;
+}
+
+.custom-select {
+  background-color: #f4f5ff;
+  border-radius: 0 20px 20px 0;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #0099ff;
+}
+/***********************************************
+* Login Page
+***********************************************/
+
+#login {
+  background: rgb(0, 111, 185);
+  background: linear-gradient(45deg, rgba(0, 111, 185, 1) 0%, rgba(0, 153, 255, 1) 35%, rgba(152, 209, 88, 1) 100%);
+}
+
+#login .alert {
+  margin-top: 20px;
+}
+
+#login input {
+  background-color: #f4f5ff !important;
+  border: 0px !important;
+  border-radius: 20px !important;
+  padding: 20px !important;
+}
+
+#login .row {
+  height: 100vh;
+}
+
+#login .card {
+  padding: 25px;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#login .card-text {
+  color: #888694;
+}
+
+#login .btn {
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.login-logo {
+  width: 120px;
+  margin: 10px auto;
+}
+
+.login-text {
+  margin-bottom: 35px;
+}
+
+.login-version {
+  margin-top: 35px;
+  font-size: 14px;
+}

@@ -112,8 +112,8 @@ $configValues['CONFIG_LOCATIONS'] =                     array(
                 "Password" => "",
                 "Database" => "radius",
                 "Hostname" => "127.0.0.1",
-				"CONFIG_INVOICE_TEMPLATE" => "invoice_template_location_1.html",
-				"CONFIG_INVOICE_ITEM_TEMPLATE" => "invoice_item_template_location_1.html"
+                "CONFIG_INVOICE_TEMPLATE" => "invoice_template_location_1.html",
+                "CONFIG_INVOICE_ITEM_TEMPLATE" => "invoice_item_template_location_1.html"
         ),
 
         "Location Example 2" =>                 array(

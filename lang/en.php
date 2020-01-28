@@ -604,7 +604,7 @@ $l['FormField']['mngradusergroupdel.php']['ToolTip']['Groupname'] = "If you spec
 
 $l['Tooltip']['usernameTooltip'] = "The exact username as the user<br/>&nbsp;&nbsp;&nbsp;
 					will use to connect to the system";
-$l['Tooltip']['passwordTypeTooltip'] = "The password type used to authenticate the user in Radius.";					
+$l['Tooltip']['passwordTypeTooltip'] = "The password type used to authenticate the user in Radius.";
 $l['Tooltip']['passwordTooltip'] = "Passwords are case sensetive in<br/>&nbsp;&nbsp;&nbsp;
 					certain systems so take extra care";
 $l['Tooltip']['groupTooltip'] = "The user will be added to this group.<br/>&nbsp;&nbsp;&nbsp;
@@ -921,7 +921,7 @@ $l['title']['Optional'] = "Optional";
 /* ********************************************************************************** */
 
 /* **********************************************************************************
- * Graphs 
+ * Graphs
  * General graphing text
  ************************************************************************************/
 $l['graphs']['Day'] = "Day";
@@ -956,7 +956,7 @@ $l['text']['LoginPlease'] = "Login Please";
 
 
 /* **********************************************************************************
- * Contact Info 
+ * Contact Info
  * Related to all contact info text, user info, hotspot owner contact information etc
  ************************************************************************************/
 
@@ -1222,7 +1222,7 @@ $l['captions']['detailsofnewrate'] = "You may fill below details for the new rat
 $l['captions']['filldetailsofnewrate'] = "Fill below the details for the new rate entry";
 
 /* **********************************************************************************
- * Help Pages Info 
+ * Help Pages Info
  * Each page has a header which is the Intro class, when clicking on the header
  * it will reveal/hide a helpPage div content which is a description of a specific
  * page, basically your expanded tool-tip.
@@ -1804,10 +1804,10 @@ $l['messages']['gismain2'] = "error: could not open the file for writing:";
 $l['messages']['gismain3'] = "Check file permissions. The file should be writable by the webserver's user/group";
 $l['messages']['gisviewwelcome'] = "Welcome to Enginx Visual Maps";
 
-$l['messages']['loginerror'] = "<br/><br/>either of the following:<br/>
-1. bad username/password<br/>
-2. an administrator is already logged-in (only one instance is allowed) <br/>
-3. there appears to be more than one 'administrator' user in the database <br/>
+$l['messages']['loginerror'] = "Either of the following:<br/>
+<li>bad username/password</li>
+<li>an administrator is already logged-in (only one instance is allowed)</li>
+<li>there appears to be more than one <code>administrator</code> user in the database</li>
 ";
 
 $l['buttons']['savesettings'] = "Save Settings";
@@ -1822,4 +1822,3 @@ $l['menu']['Gis'] = "<em>G</em>IS</a>";
 $l['menu']['Graphs'] = "<em>G</em>raphs</a>";
 $l['menu']['Config'] = "<em>C</em>onfig</a>";
 $l['menu']['Help'] = "<em>H</em>elp</a>";
-?>

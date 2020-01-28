@@ -1,110 +1,106 @@
-<?php 
-	isset($_REQUEST['error']) ? $error = $_REQUEST['error'] : $error = "";
-	
-	// clean up error code to avoid XSS
-	$error = strip_tags(htmlspecialchars($error));
+<?php
+    isset($_REQUEST['error']) ? $error = $_REQUEST['error'] : $error = "";
+    
+    // clean up error code to avoid XSS
+    $error = strip_tags(htmlspecialchars($error));
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<script src="library/javascript/pages_common.js" type="text/javascript"></script>
-<title>daloRADIUS</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/1.css" type="text/css" media="screen,projection" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>daloRADIUS</title>
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/1.css" type="text/css" media="screen,projection" /> -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen,projection" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+
+    <script src="library/javascript/pages_common.js" type="text/javascript"></script>
+    <script src="library/javascript/bootstrap.bundle.min.js"></script>
 </head>
- 
-<body onLoad="document.login.operator_user.focus()">
-<?php
-    include_once ("lang/main.php");
-?>
-
-<div id="wrapper">
-<div id="innerwrapper">
-
-		<div id="header">
-                <h1><a href="index.php"> <img src="images/daloradius_small.png" border=0/></a></h1>
-				
-				<h2>
-				
-				<?php echo t('all','copyright1'); ?>	
-				</h2>
-				<br/>
-				
-				<ul id="subnav">
-				
-				<li><?php echo t('all','daloRADIUS') ?></li>
-				
-				</ul>
-		
-		</div>
-		
-		<div id="sidebar">
-		
-		<h2><?php echo t('text','LoginRequired') ?></h2>
-				
-		<h3><?php echo t('text','LoginPlease') ?></h3>
-
-				<form name="login" action="dologin.php" class="sidebar" method="post" >
-					<ul class="subnav">
-						<li><a href="#" >Username</a> </li>
-						<input name="operator_user" value="administrator" type="text" tabindex=1 />
-						<li><a href="#" >Password</a> </li>
-						<input name="operator_pass" value="" type="password" tabindex=2 />
-						<br/>
-						<li><a href="#" >Location</a> </li>
-						<select name="location" tabindex=3 class="generic" >
-							<?php
-								if (isset($configValues['CONFIG_LOCATIONS']) && is_array($configValues['CONFIG_LOCATIONS']) && count($configValues['CONFIG_LOCATIONS']) > 0) {
-							        	foreach ($configValues['CONFIG_LOCATIONS'] as $locations=>$val)
-							                	echo "<option value='$locations'>$locations</option>";
-								} else {
-								        echo "<option value='default'>Default</option>";	
-								}
-							?>
-						</select>
-						<br/><br/><br/>
-						<input class="sidebutton" type="submit" value="Login" tabindex=3 />
-					</ul>
-				</form>
-						
-		</div>
-		
-		
-		
-		<div id="contentnorightbar">
-		
-				<h2 id="Intro"><a href="#" onclick="javascript:toggleShowDiv('helpPage')"><?php echo t('Intro','login.php') ?></a></h2>
-				
-                                <div id="helpPage" style="display:none;visibility:visible" >				
-					<?php echo t('helpPage','login') ?>
-				</div>
-				
-<?php
-	 if ($error) { 
-		echo $error;
-		echo t('messages','loginerror');
-	}
-?>
-				
 
 
-		
-		</div>
-		
-		<div id="footer">
-		
-																<?php
-        include 'page-footer.php';
-?>
+<body id="login" onLoad="document.login.operator_user.focus()">
+    <?php
+        include_once("lang/main.php");
+    ?>
 
-		
-		</div>
-		
-</div>
-</div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center login-row">
+            <div class="col-md-7 col-lg-5">
 
+                <div class="card text-center">
+                    <img class="login-logo" src="images/logo.svg" alt="logo">
+                    <div class="card-body">
+
+                        <div class="login-text">
+                            <h2 class="card-title">
+                                <?php echo t('Intro', 'login.php') ?>
+                            </h2>
+                            <p class="card-text">
+                                <?php echo t('text', 'LoginPlease') ?>
+                            </p>
+                        </div>
+
+                        <form name="login" action="dologin.php" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="operator_user" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="operator_pass" placeholder="Password">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="location">Location</label>
+                                </div>
+                                <select name="location" class="custom-select" id="location">
+                                    <?php
+                                    if (isset($configValues['CONFIG_LOCATIONS']) && is_array($configValues['CONFIG_LOCATIONS']) && count($configValues['CONFIG_LOCATIONS']) > 0) {
+                                        foreach ($configValues['CONFIG_LOCATIONS'] as $locations => $val) {
+                                            echo "<option value='$locations'>$locations</option>";
+                                        }
+                                    } else {
+                                        echo "<option value='default'>Default</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+
+                        <?php
+                        if ($error) {
+                            ?>
+
+                        <div class="alert alert-danger text-left" role="alert">
+                            <?php echo t('messages', 'loginerror'); ?>
+                        </div>
+
+                        <?php
+                        }
+                        ?>
+
+
+                        <p class="card-text login-version">
+                            <?php echo t('all', 'daloRADIUS') ?>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
+
 </html>
