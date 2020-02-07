@@ -18,11 +18,10 @@
     <!-- <link rel="stylesheet" href="css/1.css" type="text/css" media="screen,projection" /> -->
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen,projection" />
 
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 
     <script src="library/javascript/pages_common.js" type="text/javascript"></script>
+    <script src="library/javascript/jquery-3.4.1.min.js"></script>
     <script src="library/javascript/bootstrap.bundle.min.js"></script>
 </head>
 
